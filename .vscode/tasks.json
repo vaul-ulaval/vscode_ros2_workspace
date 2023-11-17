@@ -56,7 +56,7 @@
         },
         // Linting and static code analysis tasks
         {
-            "label": "fix",
+            "label": "format",
             "detail": "Reformat files with uncrustify.",
             "type": "shell",
             "command": "ament_uncrustify --reformat src/",
@@ -202,24 +202,10 @@
             "problemMatcher": []
         },
         {
-            "label": "import from workspace file",
-            "detail": "Use vcs to import modules specified by a workspace/rosinstall file.",
-            "type": "shell",
-            "command": "vcs import < src/ros2.repos src",
-            "problemMatcher": []
-        },
-        {
-            "label": "update workspace file",
-            "detail": "Use vcs to update repositories in src to workspace file.",
-            "type": "shell",
-            "command": "vcs export src > src/ros2.repos",
-            "problemMatcher": []
-        },
-        {
             "label": "install dependencies",
             "detail": "Install all dependencies specified in the workspaces package.xml files.",
             "type": "shell",
-            "command": "sudo apt-get update && rosdep update && rosdep install --from-paths src --ignore-src -y",
+            "command": "sudo apt-get update && rosdep update --rosdistro foxy && rosdep install --from-paths src --ignore-src -y",
             "problemMatcher": []
         },
         {

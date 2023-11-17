@@ -60,9 +60,11 @@ Github will then create a new repository with the contents of this one in your a
 
 ### Clone your repo
 
-Now you can clone your repo as normal
+Now you can clone your repo as normal:
 
 ![template_download](https://user-images.githubusercontent.com/6098197/91332342-e4e0f680-e780-11ea-9525-49b0afa0e4bb.png)
+
+Then use `git submodule update --init --recursive` in your repository to update the submodules repositories.
 
 ### Open it in vscode
 
@@ -78,21 +80,25 @@ If you don't see the pop-up, click on the little green square in the bottom left
 
 In the dialog, select "Remote Containers: Reopen in container"
 
-VSCode will build the dockerfile inside of `.devcontainer` for you.  If you open a terminal inside VSCode (Terminal->New Terminal), you should see that your username has been changed to `ros`, and the bottom left green corner should say "Dev Container"
+VSCode will build the dockerfile inside of `.devcontainer` for you.  If you open a terminal inside VSCode, you should see that your username has been changed to `ros`, and the bottom left green corner should say "Dev Container"
 
 ![template_container](https://user-images.githubusercontent.com/6098197/91332895-adbf1500-e781-11ea-8afc-7a22a5340d4a.png)
 
 ### Update the template with your code
 
-1. Specify the repositories you want to include in your workspace in `src/ros2.repos` or delete `src/ros2.repos` and develop directly within the workspace.
-2. If you are using a `ros2.repos` file, import the contents `Terminal->Run Task..->import from workspace file`
-3. Install dependencies `Terminal->Run Task..->install dependencies`
-4. (optional) Adjust scripts to your liking.  These scripts are used both within tasks and CI.
-   * `setup.sh` The setup commands for your code.  Default to import workspace and install dependencies.
-   * `build.sh` The build commands for your code.  Default to `--merge-install` and `--symlink-install`
-   * `test.sh` The test commands for your code.
-5. Develop!
-
+1. Install ROS dependencies
+   1. Open the command palette (`Ctrl+Shift+P`)
+   2. Type `Task`, then select `Run Task`
+   3. Select `install dependencies`
+2. Build your workspace
+   1. Open the command palette (`Ctrl+Shift+P`)
+   2. Type `Task`, then select `Run Task`
+   3. Select `build`
+3. Setup your workspace
+   1. Open the command palette (`Ctrl+Shift+P`)
+   2. Type `Task`, then select `Run Task`
+   3. Select `setup`
+4. Develop!
 
 ## FAQ
 
