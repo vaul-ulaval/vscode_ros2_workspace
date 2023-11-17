@@ -46,17 +46,17 @@ You should already have Docker and VSCode with the remote containers plugin inst
 
 ### Get the template
 
-Click on "use this template"
+Click on `"use this template"`
 
 ![template_use](https://user-images.githubusercontent.com/6098197/91331899-43f23b80-e780-11ea-92c8-b4665ce126f1.png)
 
 ### Create your repository
 
-On the next dialog, name the repository you would like to start and decide if you want all of the branches, or just the latest LTS: foxy.
+On the next dialog, name the repository you would like to start.
 
 ![template_new](https://user-images.githubusercontent.com/6098197/91332035-713ee980-e780-11ea-81d3-13b170f568b0.png)
 
-Github will then create a new repository with the contents of this one in your account.  It grabs the latest changes as "initial commit".
+Github will then create a new repository with the contents of this one in your account.  It grabs the latest changes as `"initial commit"`.
 
 ### Clone your repo
 
@@ -64,11 +64,11 @@ Now you can clone your repo as normal:
 
 ![template_download](https://user-images.githubusercontent.com/6098197/91332342-e4e0f680-e780-11ea-9525-49b0afa0e4bb.png)
 
-Then use `git submodule update --init --recursive` in your repository to update the submodules repositories.
+Then use `git submodule update --init --recursive` inside your repository to update the submodules repositories.
 
 ### Open it in vscode
 
-Now that you've cloned your repo onto your computer, you can open it in VSCode (File->Open Folder). 
+Now that you've cloned your repo onto your computer, you can open it in VSCode (`File->Open Folder` or `code .`).
 
 When you open it for the first time, you should see a little popup that asks you if you would like to open it in a container.  Say yes!
 
@@ -78,27 +78,30 @@ If you don't see the pop-up, click on the little green square in the bottom left
 
 ![template_vscode_bottom](https://user-images.githubusercontent.com/6098197/91332638-5d47b780-e781-11ea-9fb6-4d134dbfc464.png)
 
-In the dialog, select "Remote Containers: Reopen in container"
+In the dialog, select `"Remote Containers: Reopen in container"`
 
 VSCode will build the dockerfile inside of `.devcontainer` for you.  If you open a terminal inside VSCode, you should see that your username has been changed to `ros`, and the bottom left green corner should say "Dev Container"
 
 ![template_container](https://user-images.githubusercontent.com/6098197/91332895-adbf1500-e781-11ea-8afc-7a22a5340d4a.png)
 
 ### Update the template with your code
-
-1. Install ROS dependencies
+1. Add more repositories
+   1. `cd src`
+   2. `git submodule add <repo_url>`
+   3. `cd ..`
+2. Install ROS dependencies
    1. Open the command palette (`Ctrl+Shift+P`)
    2. Type `Task`, then select `Run Task`
    3. Select `install dependencies`
-2. Build your workspace
+3. Build your workspace
    1. Open the command palette (`Ctrl+Shift+P`)
    2. Type `Task`, then select `Run Task`
    3. Select `build`
-3. Setup your workspace
+4. Setup your workspace
    1. Open the command palette (`Ctrl+Shift+P`)
    2. Type `Task`, then select `Run Task`
    3. Select `setup`
-4. Develop!
+5. Develop!
 
 ## FAQ
 
