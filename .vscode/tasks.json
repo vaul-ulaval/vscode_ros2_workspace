@@ -9,6 +9,11 @@
             "detail": "Build workspace (default)",
             "type": "shell",
             "command": "./build.sh",
+            "options": {
+                "env": {
+                    "BUILD_TYPE": "Release"
+                }
+            },
             "group": {
                 "kind": "build",
                 "isDefault": true
